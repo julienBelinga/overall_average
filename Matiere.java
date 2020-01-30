@@ -25,12 +25,7 @@ public class Matiere {
 
     public int getCoef() {return coefficient;}
 
-    public Note getMoyenne() {
-        moyenne.valeur = m_moyenne;
-        moyenne.coefficient = coefficient;
-
-        return moyenne;
-    }
+    public Note getMoyenne() {return moyenne;}
 
     public String getProf() {return professeur;}
 

@@ -20,7 +20,7 @@ public class Etudiant {
         int cpt = 0;
         for (i = 0; i < nbMatiere; i++) {
 
-            Matiere matiere = new Matiere();
+            matiere = new Matiere();
 
             matiere.setNom();
             matiere.setProf();
