@@ -1,11 +1,8 @@
+package overhall_average;
 
 import java.util.Scanner;
 
 public class Matiere {
-
-    //constructeur
-    Matiere() {
-    }
 
     private String nom;
     private Note note;
@@ -16,55 +13,66 @@ public class Matiere {
     private int coefSomme = 0;
     private double tabNoteValeur[];
     private int tabNoteCoef[];
-    private Scanner sc = new Scanner(System.in);
 
-    //accesseurs
-    public String getNom() {return nom;}
-
-    public double getValeur() {return m_moyenne;}
-
-    public int getCoef() {return coefficient;}
-
-    public Note getMoyenne() {return moyenne;}
-
-    public String getProf() {return professeur;}
-
-    //mutateurs
-    public String setNom() {
-        System.out.print("matière: ");
+    //constructeur
+    Matiere() {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Nom de la matière : ");
         nom = sc.nextLine();
 
+        System.out.print("Nom du professeur : ");
+        professeur = sc.nextLine();
+        
+
+        System.out.print("Coefficient de la matière : ");
+        coefficient = sc.nextInt();
+    }
+
+    //accesseurs
+    public String getNom() {
         return nom;
     }
 
-    public String setProf() {
-        System.out.print("proffeseur: ");
-        professeur = sc.nextLine();
-
-        return professeur;
+    public double getValeur() {
+        return m_moyenne;
     }
 
-    public int setCoef() {
-        System.out.print("coefficient: ");
-        coefficient = sc.nextInt();
-
+    public int getCoef() {
         return coefficient;
     }
 
+    public Note getMoyenne() {
+        moyenne.valeur = m_moyenne;
+        moyenne.coefficient = coefficient;
+
+        return moyenne;
+    }
+
+    public String getProf() {
+        return professeur;
+    }
+
+    public int getNbNote(){
+        return nbNote;
+    }
+    
     //method
     public void calculMoyenne() {
-        System.out.print("Saisissez votre nombre de note:");
-        nbNote = sc.nextInt();
-        System.out.print("\n");
+        System.out.println("Saisissez votre nombre de note:");
+        Scanner sc1 = new Scanner(System.in);
+        nbNote = sc1.nextInt();
+        
+        tabNoteValeur = new double[nbNote];
+        tabNoteCoef = new int[nbNote];
 
-        for (i = 1; i < nbNote; i++) {
-            Scanner sc1 = new Scanner(System.in);
-            System.out.print("note: ");
+        for (i = 0; i < nbNote; i++) {
+            System.out.print("saisissez la note: ");
             tabNoteValeur[i] = sc1.nextDouble();
-            System.out.print("coef: ");
+            System.out.print("Puis le coefficient: ");
             tabNoteCoef[i] = sc1.nextInt();
 
-            somme += (tabNoteValeur[i]) * (tabNoteCoef[i]);
+            somme += tabNoteValeur[i] * tabNoteCoef[i];
             coefSomme += tabNoteValeur[i];
         }
 
@@ -72,11 +80,11 @@ public class Matiere {
     }
 
     public void afficher() {
-        System.out.println("Matière : " + getNom() + "\nProfesseur: " + getProf());
-        System.out.println("Moyenne: " + moyenne);
+        System.out.println("Matière : " + getNom() + "\n Professeur: " + getProf() + "\n");
+        System.out.println("Moyenne: " + moyenne + "\n");
 
         for (i = 0; i < nbNote; i++) {
-            System.out.println("note: " + tabNoteValeur[i] + "/ncoef: " + tabNoteCoef[i]);
+            System.out.println("note: " + tabNoteValeur[i] + "/ coef: " + tabNoteCoef[i]);
         }
     }
 }
