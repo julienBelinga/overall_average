@@ -38,7 +38,7 @@ public class Etudiant {
             m_matiereC[i] = matiere.getCoef();
 
             cpt += m_matiereC[i];
-            moyenne = (m_matiereV[i] * m_matiereC[i]) / cpt;
+            moyenne = ((m_matiereV[i]) * (m_matiereC[i])) / cpt;
         }
         
 
@@ -46,11 +46,11 @@ public class Etudiant {
     }
 
     public void afficher() {
-        System.out.println("========= BULLETIN ==========");
+        System.out.println("\n========= BULLETIN ==========");
         System.out.println("Moyenne: " + moyenne + "\n");
 
         for (i = 0; i < nbMatiere; i++) {
-            System.out.println(matiere.getNom() + "  note: " + m_matiereV[i] + "/ coef: " + m_matiereC[i]);
+            System.out.println("note: " + m_matiereV[i] + "\ncoef: " + m_matiereC[i]);
             matiere.afficher();
         }
     }

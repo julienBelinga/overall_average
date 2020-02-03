@@ -43,9 +43,6 @@ public class Matiere {
     }
 
     public Note getMoyenne() {
-        moyenne.valeur = m_moyenne;
-        moyenne.coefficient = coefficient;
-
         return moyenne;
     }
 
@@ -72,7 +69,7 @@ public class Matiere {
             System.out.print("Puis le coefficient: ");
             tabNoteCoef[i] = sc1.nextInt();
 
-            somme += tabNoteValeur[i] * tabNoteCoef[i];
+            somme += (tabNoteValeur[i]) * (tabNoteCoef[i]);
             coefSomme += tabNoteValeur[i];
         }
 
@@ -80,11 +77,11 @@ public class Matiere {
     }
 
     public void afficher() {
-        System.out.println("Matière : " + getNom() + "\n Professeur: " + getProf() + "\n");
+        System.out.println("Matière : " + getNom() + "\nProfesseur: " + getProf() + "\n");
         System.out.println("Moyenne: " + moyenne + "\n");
 
         for (i = 0; i < nbNote; i++) {
-            System.out.println("note: " + tabNoteValeur[i] + "/ coef: " + tabNoteCoef[i]);
+            System.out.println("note: " + tabNoteValeur[i] + "\ncoef: " + tabNoteCoef[i]);
         }
     }
 }
