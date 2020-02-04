@@ -40,9 +40,9 @@ public class Etudiant {
             somme += ((m_matiereV[i]) * (m_matiereC[i]));
         }
         
-        moyenne = somme /cpt;
+        this.moyenne = somme /cpt;
         
-        return moyenne;
+        return this.moyenne;
     }
 
     public void afficher() {

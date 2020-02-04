@@ -17,12 +17,13 @@ public class Matiere {
     //constructeur
     Matiere() {
         Scanner sc = new Scanner(System.in);
-
+        
         System.out.print("Nom de la matière : ");
         nom = sc.nextLine();
 
         System.out.print("Nom du professeur : ");
         professeur = sc.nextLine();
+        
 
         System.out.print("Coefficient de la matière : ");
         coefficient = sc.nextInt();
@@ -41,20 +42,24 @@ public class Matiere {
         return coefficient;
     }
 
+    public Note getMoyenne() {
+        return moyenne;
+    }
+
     public String getProf() {
         return professeur;
     }
 
-    public int getNbNote() {
+    public int getNbNote(){
         return nbNote;
     }
-
+    
     //method
     public double calculMoyenne() {
         System.out.println("Saisissez votre nombre de note:");
         Scanner sc1 = new Scanner(System.in);
         nbNote = sc1.nextInt();
-
+        
         tabNoteValeur = new double[nbNote];
         tabNoteCoef = new int[nbNote];
 
@@ -69,7 +74,7 @@ public class Matiere {
         }
 
         m_moyenne = somme / coefSomme;
-
+        
         return m_moyenne;
     }
 
