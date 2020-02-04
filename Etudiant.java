@@ -11,12 +11,11 @@ public class Etudiant {
 
     
     //constructeur
-    Etudiant() {
-        
-    }
+    Etudiant() {}
 
     //method
     public double calculMoyenne() {
+        double somme = 0;
         
         System.out.print("Saisissez votre nombre de matière : ");
         
@@ -38,10 +37,11 @@ public class Etudiant {
             m_matiereC[i] = matiere.getCoef();
 
             cpt += m_matiereC[i];
-            moyenne = ((m_matiereV[i]) * (m_matiereC[i])) / cpt;
+            somme += ((m_matiereV[i]) * (m_matiereC[i]));
         }
         
-
+        moyenne = somme /cpt;
+        
         return moyenne;
     }
 

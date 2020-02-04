@@ -7,8 +7,8 @@ public class Note {
     //constructeur
     Note(){}
         
-    protected int coefficient;
-    protected double valeur;
+    private int coefficient;
+    private double valeur;
     
     // accesseurs
     public int getCoef() {
