@@ -6,6 +6,9 @@ public class Main {
         Etudiant E = new Etudiant();
         E.calculMoyenne();
         E.afficher();
+        Interface I = new Interface();
+        I.fenetre();
+        
     }
 
 }
